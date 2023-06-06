@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = 'iosSinovoLib'  # 库的名称
-  s.version      = 'v0.0.9-beta'         # 库的版本号
+  s.version      = '1.0.0-beta'         # 库的版本号
   s.summary      = 'IBooking BLE API'  # 库的简要描述
   s.homepage     = 'https://github.com/ThreeZ3/iosSinovoLib'  # 库的主页
   # s.license      = { :type => 'MIT', :file => 'LICENSE' }  
@@ -33,7 +33,7 @@ Pod::Spec.new do |s|
 
 
   s.author       = { 'ThreeZ' => '534158825@qq.com' }
-  s.source       = { :git => 'https://github.com/ThreeZ3/iosSinovoLib.git', :tag => 'v0.0.9-beta' }  # 仓库地址和标签
+  s.source       = { :git => 'https://github.com/ThreeZ3/iosSinovoLib.git', :tag => '1.0.0-beta' }  # 仓库地址和标签
 
   s.ios.deployment_target = '9.0'  # iOS 最低支持版本
 
