@@ -26,6 +26,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (void) onConnectLockViaQRCode :(NSMutableDictionary *)dict;  //连接方式一，通过扫描来添加锁的结果
 - (void) onConnectLockViaMacSno :(NSMutableDictionary *)dict;  //连接方式二，直接通过mac地址和sno来连接锁
 - (void) onConfigureGW :(NSMutableDictionary *)dict;           //网关蓝牙配网的结果回调
+- (void) onConnectFM73 ;           //连接FM73成功
 
 //数据处理部分
 - (void) onCreateUser :(NSMutableDictionary *)dict;
@@ -40,6 +41,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (void) onRequestLog :(NSMutableDictionary *)dict;
 - (void) onDynamicCodeStatus :(NSMutableDictionary *)dict;
 - (void) onLockFrozen :(NSMutableDictionary *)dict;
+- (void) onUserAccessTime :(NSMutableDictionary *)dict;
 
 @end
 
@@ -100,6 +102,10 @@ NS_ASSUME_NONNULL_BEGIN
 - (void) startToDFU ;    //start to DFU , firmware update
 - (void) finishiDFU ;    //finish DFU,
 - (void) finishConfigureGW;   // 完成蓝牙配网
+
+- (void) connectFM73 :(NSString *)qrcode :(NSString *)mIMEI :(CBPeripheral *)newPeripheral;
+//add wrk 20220617 ，增加设置用户的允许访问时间段
+- (void) accessTime :(NSString *)nid :(NSString *)starttime :(NSString *)endtime :(NSString *)lockSNO :(NSString *)lockMacAddress;
 
 //实例化mqtt 对象
 +(instancetype) sharedBLE;
